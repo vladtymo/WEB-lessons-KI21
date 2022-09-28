@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* CSS Selectors */
+
+        /* selector template:
+            type {
+                property: value;
+                property2: value2;
+            }
+        */
+
+        /* ---------- tag selectors ---------- */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            text-transform: uppercase;
+        }
+
+        h2,
+        h3 {
+            color: aquamarine;
+            background-color: darkblue;
+            text-align: center;
+            border: 2px solid aquamarine;
+            box-shadow: 1px 1px 10px black;
+            padding: 10px;
+        }
+
+        strong {
+            color: brown;
+            font-size: 26px;
+            text-decoration: underline;
+        }
+
+        mark {
+            font-family: fantasy;
+            background-color: transparent;
+            color: maroon;
+            font-weight: bold;
+            font-size: 32px;
+            letter-spacing: 5px;
+        }
+
+        /* ---------- class selectors ---------- */
+        .main-word {
+            color: white;
+            background-color: black;
+            font-size: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Selectors</h1>
+    <hr>
+
+    <h2>Styling using inline styles</h2>
+    <p style="color: darkblue; font-size: 22px;">Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Unde distinctio nihil neque placeat molestiae eos,
+        perspiciatis blanditiis reiciendis, pariatur quas voluptates magni vel aspernatur soluta quos mollitia
+        officia
+        corrupti! Quas.</p>
+
+    <p style="color: darkblue; font-size: 22px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, culpa!
+    </p>
+
+    <h2>Styling using CSS selectors</h2>
+
+    <h3>Tag Selector examples</h3>
+    <p>Lorem ipsum <strong>dolor sit</strong> amet consectetur adipisicing elit. Eius, quas.</p>
+    <p><strong>Lorem ipsum</strong> dolor, sit amet consectetur <strong>adipisicing elit</strong>. Corporis
+        necessitatibus nemo quibusdam cumque,
+        inciduntipsam.</p>
+    <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. A aspernatur quas cum culpa excepturi
+        maiores? Nihil,
+        explicabo <mark>qui iste</mark> distinctio architecto ratione <mark>doloribus</mark> accusamus placeat
+        recusandae debitis quibusdam unde?
+        Et.</p>
+
+    <h3>Class Selector examples</h3>
+    <p>Lorem ipsum dolor sit amet, <mark class="main-word">consectetur</mark> adipisicing elit. A <abbr
+            class="main-word">CSS</abbr> aspernatur quas cum culpa excepturi
+        maiores? Nihil,
+        explicabo <strong class="main-word">qui</strong> distinctio architecto ratione <em
+            class="main-word">doloribus</em> accusamus placeat
+        recusandae debitis quibusdam unde?
+        Et.</p>
+
+    <h4>span tag - inline tag without defaul styling</h4>
+    <p>Nostrum <span class="main-word">consequatur facilis</span> doloremque, <span class="main-word">nobis natus
+            cupiditate</span>
+        necessitatibus eligendi
+        eveniet delectus numquam
+        recusandae illo magni enim libero dicta accusamus eos voluptatem consequuntur inventore placeat iste quam quia?
+        Illo, tenetur <span class="main-word">consequuntur</span>.</p>
+    <p>Tenetur voluptatum earum laboriosam odio ea hic officia ducimus soluta eos commodi architecto possimus sit labore
+        aspernatur fugiat, alias perspiciatis blanditiis consequatur cum quis necessitatibus facere esse assumenda.
+        Blanditiis, perspiciatis!</p>
+</body>
+
+</html>
