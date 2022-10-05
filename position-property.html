@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position static, relative, absolute, fixed, sticky</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            width: 90%;
+            max-width: 700px;
+            margin: 10px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        #main {
+            border: 3px double #6b7f93;
+            padding: 5px 10px;
+            margin: 20px 0;
+
+            position: relative;
+            /* left: 10px;
+            top: 0;
+            right: inherit;
+            bottom: auto; */
+        }
+
+        #main div {
+            border: 2px solid #a4afba;
+            padding: 10px;
+            margin: 15px 0;
+            cursor: pointer;
+
+            position: relative;
+            /* left: 10px;
+            right: 1em;
+            top: 100px;
+            bottom: 50px; */
+        }
+
+        .choosen {
+            background-color: rgba(78, 104, 162, 0.77);
+            color: #fff;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            max-width: 50px;
+        }
+
+        #control {
+            margin-bottom: 10px;
+            border: 3px double #6b7f93;
+        }
+
+        #relative {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset id="control">
+        <form name="controlForm" id="controlForm">
+            <p><strong>position:</strong>
+                <label for="static"><input type="radio" name="pos" id="static" value="static" checked>static</label>
+                <label for="relative"><input type="radio" name="pos" id="relative" value="relative">relative</label>
+                <label for="absolute"><input type="radio" name="pos" id="absolute" value="absolute">absolute</label>
+                <label for="fixed"><input type="radio" name="pos" id="fixed" value="fixed">fixed</label>
+                <label for="sticky"><input type="radio" name="pos" id="sticky" value="sticky">sticky</label>
+            </p>
+            <p><strong>coords:</strong> <label> left <input type="number" name="left" value="" step="10"></label>
+                <label> top <input type="number" name="top" value="" step="10"></label>
+                <label> right <input type="number" name="right" value="" step="10"></label>
+                <label> bottom <input type="number" name="bottom" value="" step="10"></label>
+            </p>
+        </form>
+    </fieldset>
+
+    <div id="main">
+        <h1>Test CSS position</h1>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae optio consectetur quidem, aliquam error
+            quo quam a saepe eligendi qui. Quos asperiores sit dolorum, atque!</div>
+        <div>Iure modi rem, deserunt cum est quia fugit vel ullam blanditiis obcaecati aut repellendus reprehenderit
+            doloremque quibusdam magni laudantium rerum, saepe consectetur. Suscipit, dolore, omnis.</div>
+        <div>Quidem, nulla alias libero tenetur distinctio mollitia explicabo repudiandae saepe similique, porro
+            consequatur itaque blanditiis qui vitae repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Incidunt veritatis iste quasi. Omnis praesentium inventore numquam sit architecto molestiae, quia
+            consequuntur voluptatibus minus repudiandae earum nostrum similique sint, quidem vero quo vitae voluptate
+            illo nulla consectetur. Fugit aspernatur harum, alias cumque distinctio iusto consectetur totam sapiente
+            beatae qui voluptatum iste deleniti illo eligendi excepturi nam eius corporis nemo laudantium at. Suscipit
+            sapiente, ab eos rerum quo nihil ipsum totam nobis aliquid! Porro, facilis? Minima magni enim sit voluptas
+            vel nostrum, labore aut architecto quod! Earum quibusdam a, vero recusandae similique ut. Nihil esse
+            architecto facilis iste aliquid consequatur qui enim. Illum repellendus magnam, sed hic maxime dolor.</div>
+        <div>Eveniet hic dicta odit ex iusto cumque fugit nisi omnis vero cupiditate a eos rerum, sunt incidunt fugiat
+            pariatur vitae repudiandae illum dolore at ab.</div>
+        <div>Ea, doloremque ducimus. Neque repellat iusto, sapiente optio quos quam corporis nam, dolor porro eaque
+            asperiores adipisci quaerat fugit autem aut, nihil velit quae quis. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Est repellat sed tenetur eligendi rerum eos facilis officiis quia soluta aspernatur.
+            Quisquam eveniet veniam quos, voluptas placeat tenetur corporis dicta autem ullam veritatis maxime dolorum,
+            voluptatum sequi nesciunt fuga qui, ipsa molestiae at! Rerum nulla quasi expedita quisquam dignissimos
+            autem, aliquid vel excepturi ullam cumque quos ratione unde nemo necessitatibus, distinctio ipsa. Deleniti
+            autem expedita odio earum, dolore illo aliquam, eaque ea molestiae quidem quod, officia deserunt! Tempora at
+            dolore modi laudantium deserunt temporibus! Similique, commodi sequi autem amet accusantium iure ut modi
+            quae quia. Distinctio molestiae quos quisquam soluta qui.</div>
+        <div>Expedita ab minima neque, voluptate. Commodi obcaecati cumque eos minus velit accusantium vel! Aperiam a
+            ducimus, delectus voluptates beatae iste maiores sint ab hic nostrum.</div>
+    </div>
+
+    <script>
+        let pos = document.querySelectorAll('input[type="radio"]'),
+            coords = document.querySelectorAll('input[type="number"]'),
+            divs = document.querySelectorAll('#main div');
+        //pos = Array.from(pos);
+        divs.forEach(div => div.addEventListener('click', lightingDiv));
+        pos.forEach(radio => radio.addEventListener('click', positionDiv));
+        coords.forEach(numberField => numberField.addEventListener('change', setCoords));
+
+        function lightingDiv() {
+            let choosenDiv = document.querySelector('.choosen');
+            if (choosenDiv) {
+                choosenDiv.classList.remove('choosen');
+                choosenDiv.removeAttribute('style');
+            }
+            this.className = "choosen";
+            this.style.position = document.querySelector('[name="pos"]:checked').value;
+            coords.forEach(coord => {
+                if (coord.value) this.style[coord.name] = coord.value;
+            })
+        }
+
+        function positionDiv() {
+            let choosenDiv = document.querySelector('.choosen') || document.querySelector('#main div:first-of-type');
+            if (choosenDiv) {
+                choosenDiv.classList.add('choosen');
+                choosenDiv.style.position = document.querySelector('[name="pos"]:checked').value;
+            }
+        }
+
+        function setCoords() {
+            let coord = this.name;
+            console.log(coord);
+            let choosenDiv = document.querySelector('.choosen') || document.querySelector('#main div:first-of-type');
+            if (choosenDiv) {
+                choosenDiv.classList.add('choosen');
+                choosenDiv.style[coord] = this.value + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>
