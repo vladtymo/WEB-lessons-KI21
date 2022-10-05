@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        table {
+            color: white;
+            background-color: gray;
+            width: 100%;
+
+            border-collapse: collapse;
+            /* border-spacing: 10px; */
+        }
+
+        caption {
+            text-align: right;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: rgb(96, 96, 96);
+        }
+
+        td,
+        th {
+            padding: 15px;
+        }
+
+        th {
+            text-transform: uppercase;
+        }
+
+        td {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td:first-child,
+        th:first-child {
+            color: rgb(96, 96, 96);
+        }
+
+        td:first-child {
+            text-align: left;
+            font-weight: normal;
+        }
+
+        td span {
+            border: 2px solid white;
+            border-radius: 50%;
+
+            display: inline-block;
+            line-height: 25px;
+            width: 25px;
+            height: 25px;
+        }
+
+        thead {
+            border-bottom: 1px solid white;
+        }
+
+        tfoot {
+            border-top: 1px solid white;
+        }
+
+        .col-1 {
+            background-color: lightgray;
+        }
+
+        .col-2 {
+            background-color: rgb(78, 213, 168);
+        }
+
+        .col-3 {
+            background-color: rgb(64, 128, 64);
+        }
+
+        .col-4 {
+            background-color: rgb(202, 202, 76);
+        }
+
+        .col-5 {
+            background-color: rgb(202, 86, 86);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- tr - table row -->
+    <!-- td - table data -->
+    <!-- th - table head -->
+    <table>
+        <caption>Title table</caption>
+        <colgroup>
+            <col class="col-1">
+            <col class="col-2">
+            <col class="col-3">
+            <col class="col-4">
+            <col class="col-5">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Specifications</th>
+                <th>Free</th>
+                <th>Basic</th>
+                <th>Standart</th>
+                <th>Premium</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Price</th>
+                <th>0.00$</th>
+                <th>9.99$</th>
+                <th>10.99$</th>
+                <th>29.99$</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>Lorem ipsum dolor</td>
+                <td><span>+</span></td>
+                <td><span>-</span></td>
+                <td><span>-</span></td>
+                <td><span>+</span></td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>+</span></td>
+                <td><span>-</span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
