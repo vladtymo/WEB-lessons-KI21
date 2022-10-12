@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav a {
+            background-color: darkcyan;
+            color: white;
+            padding: 10px;
+
+            display: block;
+            width: 200px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        /* ---------- Link pseudo-classes ---------- */
+        /* not visited */
+        nav a:link {
+            color: white;
+        }
+
+        /* visited */
+        nav a:visited {
+            color: lightgray;
+        }
+
+        /* on mouse hover */
+        nav a:hover {
+            background-color: rgb(0, 83, 83);
+        }
+
+        /* on mouse click */
+        nav a:active {
+            /* font-size: larger; */
+            /* font-size: 120%; */
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Menu</h1>
+    <nav>
+        <ul>
+            <li>
+                <!-- go to external resource -->
+                <a href="https://google.com">Google</a>
+            </li>
+            <li>
+                <!-- go to internal resource -->
+                <a href="./selectors.html">Selectors</a>
+            </li>
+            <li>
+                <!-- go to page element -->
+                <a href="#last-title">Go to Last Title</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore aliquam dolorum deleniti corporis
+            laudantium id beatae delectus. Hic nostrum distinctio, deserunt aliquam nisi possimus ipsam quam velit
+            incidunt, necessitatibus culpa?</p>
+        <h3>Example list</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dicta excepturi error soluta sapiente
+                ipsam nobis veniam at! Perferendis, harum?</li>
+            <li>Architecto maiores quas rerum quisquam a earum reprehenderit cupiditate? Voluptates dolor ullam vitae
+                nam. Voluptate maiores illo odit quasi provident.</li>
+            <li>Excepturi laboriosam quod doloremque possimus repellat autem ex, in dolorem ad facere at ea error sed
+                provident, blanditiis eos hic.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facere iure adipisci quibusdam
+            aspernatur reiciendis obcaecati, a cum dolorem, nesciunt earum tempora ex nam, ipsam consequuntur natus?
+            Nam, inventore libero.</p>
+        <h2 id="last-title">Last title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint laudantium nisi magnam, consequatur minima
+            rerum aspernatur suscipit. Obcaecati temporibus laborum optio fugit est velit. Nobis deleniti amet libero
+            eos, sapiente dicta repellat laborum soluta odit fugiat quibusdam consequatur qui, hic beatae quasi aliquam
+            veniam similique earum vel voluptas alias quos! Ad vitae placeat voluptates iure, laborum delectus fugit.
+            Excepturi animi suscipit iste. Officiis accusamus saepe itaque praesentium quasi? Magni, enim eveniet
+            recusandae saepe voluptatum officiis! Officia, repudiandae rem dolorum ducimus non tempora aspernatur atque,
+            architecto culpa expedita quod ex ipsum. Facere totam facilis fugit possimus. Qui assumenda accusantium
+            libero dicta atque illo, velit ullam odit odio? Sapiente laborum aperiam eveniet molestiae recusandae
+            ratione vel, nisi maiores obcaecati cumque ad quaerat adipisci ea quas iusto magni a nobis soluta! Dolorem
+            ut molestias quia, voluptatum aut tempore repudiandae, adipisci sunt, sequi nostrum aperiam? Nemo
+            perspiciatis incidunt vero minima officia quasi laborum eligendi provident aperiam? Dolores pariatur eveniet
+            sit esse excepturi maiores voluptates voluptatem, illum molestias ab repellendus, tempore accusamus quia
+            repellat? A, voluptatem, aliquid eaque, asperiores consectetur corporis iure reprehenderit dolorem porro
+            esse enim voluptates quasi perspiciatis ea illum ducimus sit alias ullam fugit vel distinctio tempora
+            placeat molestias minus? Incidunt, officiis odit. Illum quasi impedit, vel facilis iusto optio mollitia
+            blanditiis ipsum veniam provident corporis unde eligendi voluptatibus porro accusamus perferendis eius.
+            Maiores quod voluptatum est aliquid animi sunt sapiente architecto pariatur nisi amet, quisquam, quia,
+            laboriosam quam vero ad in. Ipsum iure non harum sapiente consequuntur recusandae perspiciatis praesentium,
+            eum impedit assumenda nemo illum molestiae provident corporis ipsam tenetur quos aliquid autem nam debitis
+            voluptatem optio cum. Dolorum, rerum. Consequatur expedita quibusdam, corporis error hic blanditiis
+            consectetur dolorum quaerat sint harum facilis incidunt, neque nisi ab veniam reprehenderit ex molestiae
+            repudiandae quidem eaque possimus quo rerum soluta! Aliquam, accusantium dolores?</p>
+    </main>
+</body>
+
+</html>
