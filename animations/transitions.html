@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: wheat;
+        }
+
+        a {
+            background-color: teal;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            display: block;
+            padding: 15px 20px;
+            margin: 10px 0px;
+            width: 100px;
+
+            /* transition: property duration function(ease) delay(0) */
+            /* transition: border-radius 1s ease 0s; */
+            transition: all .5s;
+        }
+
+        a:hover {
+            /* border-radius: 20px; */
+            background-color: rgb(0, 68, 68);
+            /* font-size: 1.2em; */
+            box-shadow: 10px 10px 20px black;
+            width: 150px;
+
+            /* transition: box-shadow 1s ease 0s, width 1s ease 0s; */
+            /* transition: all 1s; */
+        }
+
+        #block {
+            background-color: brown;
+            border-radius: 2px;
+            border: 1px solid black;
+            height: 100px;
+
+            /* width = content + padding + border */
+            box-sizing: border-box;
+
+            transition: all 1s;
+        }
+
+        #block:active {
+            background-color: rgb(16, 114, 153);
+            border-width: 20px;
+        }
+
+        #bullet {
+            margin: 10px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: goldenrod;
+
+            margin-left: 0;
+
+            transition: margin-left 1s ease-out;
+        }
+
+        #bullet:active {
+            margin-left: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="">Home</a>
+        <a href="">Service</a>
+        <a href="">Contacts</a>
+    </nav>
+    <div id="block"></div>
+    <div id="bullet"></div>
+</body>
+
+</html>

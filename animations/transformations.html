@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Transform</title>
+  <style>
+    body {
+      background-color: white;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      display: inline-block;
+      border: 3px solid black;
+      border-top-color: blue;
+      border-right-color: yellow;
+      border-bottom-color: red;
+
+      transition: transform 0.5s ease;
+    }
+
+    .translate:hover {
+      transform: translate(20px, -20px);
+    }
+
+    .scale:hover {
+      transform: scale(1.2);
+      /* transform: scale(1.4, 1.1); */
+    }
+
+    .rotate:hover {
+      transform: rotate(45deg);
+    }
+
+    .origin {
+      /* transform-origin: rigth, top; */
+      transform-origin: 100% 0%;
+    }
+
+    .skew:hover {
+      transform: skew(10deg, 5deg);
+    }
+
+    .matrix:hover {
+      /* matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY() ) */
+      transform: matrix(1.1, 1, -2, 1.1, 10, 10);
+    }
+
+    @keyframes round {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animation {
+      /* animation: name duration timing-function(ease) delay(0) iteration-count direction fill-mode; */
+      /* animation: round 2s linear 2s 2 normal both; */
+      animation: round 2s ease 0s infinite alternate;
+    }
+
+
+    .animation2 {
+      animation: zigzag 4s;
+    }
+
+    @keyframes zigzag {
+      0% {
+        transform: rotate(0);
+      }
+
+      40% {
+        transform: rotate(180deg);
+      }
+
+      60% {
+        transform: rotate(90deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animation3 {
+      animation: move 2s 3s;
+      /* forwards - element still on the last keyframe */
+      /* backwards - element wait delay on the first keyframe */
+      /* both - forwards + backwards */
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translate(0px, 0px);
+      }
+
+      100% {
+        transform: translate(50px, 50px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>transform + transition</h2>
+  <div class="box translate"></div>
+  <div class="box scale"></div>
+  <div class="box rotate"></div>
+  <div class="box rotate origin"></div>
+  <div class="box skew"></div>
+  <div class="box matrix"></div>
+
+  <h2>transform + animation</h2>
+  <div class="box animation"></div>
+  <div class="box animation2"></div>
+  <div class="box animation3"></div>
+</body>
+
+</html>
