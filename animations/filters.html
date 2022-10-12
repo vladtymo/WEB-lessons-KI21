@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Filters</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            display: inline-block;
+            background: url(./landscape2.jpg) center/cover no-repeat;
+
+            transition: filter .3s;
+
+            /* the same */
+            /* transition-property: filter;
+            transition-duration: .3s;
+            transition-timing-function: ease;
+            transition-delay: 0; */
+        }
+
+        .blur:hover {
+            filter: blur(3px);
+        }
+
+        .blur:active {
+            filter: brightness(50%) blur(3px);
+        }
+
+        .brightness:hover {
+            filter: brightness(150%);
+        }
+
+        .contrast:hover {
+            filter: contrast(120%);
+        }
+
+        .drop-shadow:hover {
+            filter: drop-shadow(2px 3px 5px black);
+        }
+
+        .grayscale {
+            filter: grayscale(100%);
+        }
+
+        .grayscale:hover {
+            filter: grayscale(0);
+        }
+
+        .hue-rotate:hover {
+            filter: hue-rotate(180deg);
+        }
+
+        .invert:hover {
+            filter: invert(100%);
+        }
+
+        .opacity:hover {
+            filter: opacity(0.3);
+        }
+
+        .saturate:hover {
+            filter: saturate(300%);
+        }
+
+        .sepia:hover {
+            filter: sepia(150%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blur"></div>
+    <div class="brightness"></div>
+    <div class="contrast"></div>
+    <div class="drop-shadow"></div>
+    <div class="grayscale"></div>
+    <div class="hue-rotate"></div>
+    <div class="invert"></div>
+    <div class="opacity"></div>
+    <div class="saturate"></div>
+    <div class="sepia"></div>
+</body>
+
+</html>
