@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Model</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            border: 1px solid black;
+            height: 400px;
+
+            /* встановлення flex контейнера */
+            display: flex;
+            /* напрямок головної та поперечної осі (row) */
+            flex-direction: row;
+            /* вирівнювання елементів по головній осі (flex-start) */
+            justify-content: space-between;
+            /* вирівнювання елементів по поперечеій осі (stretch) */
+            align-items: center;
+            /* встановлення переносу елементів при нехватці місця (nowrap) */
+            flex-wrap: wrap;
+            /* вирівнювання рівнів елементів при наявності декількох рядків або колонок (stretch) */
+            align-content: space-around;
+
+            /* загальна властивість яка включає параметри: flex-direction || flex-wrap */
+            flex-flow: row wrap;
+        }
+
+        .item {
+            background-color: teal;
+            padding: 30px;
+            /* width: 90px; */
+            color: white;
+            text-align: center;
+            border: 1px solid rgb(0, 107, 107);
+
+            /* загальна властивість яка включає параметри: flex-grow || flex-shrink || flex-basis */
+            flex: 1;
+            /* flex-grow */
+            flex: 1 1;
+            /* flex-grow flex-shrink */
+            flex: 1 10%;
+            /* flex-grow flex-basis */
+            flex: 0 1 auto;
+            /* default value for flex-grow flex-shrink flex-basis */
+        }
+
+        .item:nth-child(1) {
+            /* коефіцієнт розширенння елемента при нявності вільного місця (0) */
+            flex-grow: 1;
+            /* коефіцієнт звуження елемента при нехватці місця (1) */
+            flex-shrink: 0;
+        }
+
+        .item:nth-child(2) {
+            /* вирівнювання окремого елемента по головній осі */
+            align-self: stretch;
+        }
+
+        .item:nth-child(3) {
+            min-width: 100px;
+            max-width: 150px;
+            /* ширина елемента */
+            flex-basis: 25%;
+        }
+
+        .item:nth-child(4) {
+            /* зміна порядку розміщення елемента (0) */
+            order: 1;
+        }
+
+        /* 3 column layout */
+        .col-3 {
+            border: 1px solid black;
+
+            display: flex;
+            gap: 2%;
+        }
+
+        .col-3 div {
+            background-color: darkblue;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            border: 1px solid white;
+
+            flex-basis: 33.33%;
+        }
+
+        /* 3 column layout */
+        .on-sides {
+            border: 1px solid black;
+
+            display: flex;
+            /* justify-content: space-between; */
+        }
+
+        .on-sides div {
+            background-color: darkblue;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        .on-sides div:nth-child(3) {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Flexbox example</h2>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+    </div>
+
+    <h2>3 column layout</h2>
+    <div class="col-3">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+    </div>
+
+    <h2>blocks on sides layout</h2>
+    <div class="on-sides">
+        <!-- <div> -->
+        <div>Left block</div>
+        <div>Left block</div>
+        <!-- </div> -->
+        <!-- <div> -->
+        <div>Right block</div>
+        <div>Right block</div>
+        <div>Right block</div>
+        <!-- </div> -->
+    </div>
+</body>
+
+</html>
