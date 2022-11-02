@@ -67,6 +67,24 @@ console.log(`Application count: ${yourPhone.applicationCount}`); // get
 
 yourPhone.show();
 
+// ---------------- inheritance ----------------
+// super - get an access to the parent class
+class SuperPhone extends Phone {
+
+    constructor(id, model, price, manufacture, battery, strenght) {
+        super(id, model, price, manufacture, battery);
+        this.strenght = strenght;
+    }
+
+    show() {
+        super.show();
+        console.log(`Strength: ${this.strenght} Kg`);
+    }
+}
+
+const superPhone = new SuperPhone(777, 'Space XX', 3200, "Mars", { model: "Baseus", voltage: 4.5, capacity: 4400 }, 5000);
+superPhone.show();
+
 /*
 .selected {
      color: white;
