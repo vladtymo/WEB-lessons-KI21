@@ -33,7 +33,7 @@ class Phone {
     constructor(id, model, price, manufacture, battery) {
         this.id = id;
         this.model = model;
-        this.price = price;
+        this._price = price;
         this.manufacture = manufacture;
         this.battery = battery;
         this.quantity = 1;
@@ -41,13 +41,47 @@ class Phone {
         this.warantyExpired = false
     }
 
+    // setter / getter
+    /**
+     * @param {number} newPrice - new price of the phone
+     */
+    set price(newPrice) {
+        if (newPrice >= 0)
+            this._price = newPrice;
+    }
+    get applicationCount() {
+        return this.applications.length;
+    }
+
     // methods
     show() {
-        console.log(`${this.model} - ${this.price}$`);
+        console.log(`${this.model} - ${this._price}$`);
     }
 }
 
 let yourPhone = new Phone(2003, 'Pixel 3', 790, "Google", { model: "Baseus", voltage: 4.5, capacity: 4400 });
 console.log(`Battery model: ${yourPhone.battery.model}`);
 
+yourPhone.price = -200;                                          // set
+console.log(`Application count: ${yourPhone.applicationCount}`); // get
+
 yourPhone.show();
+
+/*
+.selected {
+     color: white;
+     height: 100%;
+     text-align: center;            
+}
+name: string, 
+properties: [
+    {
+        name: string,
+        value: string
+    },
+    {
+        name: string,
+        value: string
+    }
+]
+*/
