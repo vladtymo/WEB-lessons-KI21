@@ -10,8 +10,17 @@ let myPhone = {
     name: "iPhone X",
     price: 320,
     quantity: 12,
-    manufacture: "Apple"
+    manufacture: "Apple",
+    applications: ["Twitter", "Facebook", "Safari"],
+    battery: {
+        model: "Baseus",
+        voltage: 2.7,
+        capacity: 3200
+    },
+    warantyExpired: true
 };
+
+myPhone.applications.push("Angry Birds");
 
 // ---------------- functions ----------------
 // function expression: funciton [name](param1, param2...) { ...body... }
