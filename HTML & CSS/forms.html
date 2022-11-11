@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: 50%;
+            margin: 10px auto;
+            background: center/cover url('https://images.unsplash.com/photo-1619964478337-12e178409359?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bmF0dXJhbCUyMGJsdXJ8ZW58MHx8MHx8&w=1000&q=80');
+        }
+
+        form {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            backdrop-filter: blur(10px) brightness(80%);
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form label {
+            display: flex;
+            gap: 10px;
+        }
+
+        form label span {
+            text-align: right;
+            flex-basis: 20%;
+        }
+
+        form label input,
+        form label textarea {
+            flex-basis: 80%;
+        }
+
+        form label input {
+            padding: 6px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        form button {
+            padding: 6px;
+            border: none;
+            text-transform: uppercase;
+            color: white;
+            border-radius: 8px;
+            background-color: rgba(45, 103, 84, 0.443);
+            transition: .2s;
+        }
+
+        form button:hover {
+            background-color: rgba(45, 103, 84, 1);
+        }
+
+        form label input[type="checkbox"] {
+            flex-basis: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <h1>Registration Form</h1>
+        <!-- <label for="username-input" accesskey="n">Name:</label>
+        <input type="text" placeholder="Your name" id="username-input"> -->
+        <label>
+            <span>Username:</span>
+            <input type="text" name="username" placeholder="Your name">
+        </label>
+        <label>
+            <span>Email:</span>
+            <input type="email" placeholder="Your email">
+        </label>
+        <label>
+            <span>Password:</span>
+            <input type="password">
+        </label>
+        <label>
+            <span>Age:</span>
+            <input min="1" max="130" type="number">
+        </label>
+        <label>
+            <span>Color:</span>
+            <input type="color">
+        </label>
+        <label>
+            <span>Date:</span>
+            <input type="date">
+        </label>
+        <label>
+            <span>Time:</span>
+            <input type="time">
+        </label>
+        <label>
+            <span>Website:</span>
+            <input type="url">
+        </label>
+        <label>
+            <span>Phone number:</span>
+            <input type="tel">
+        </label>
+        <label>
+            <span>File:</span>
+            <input type="file">
+        </label>
+        <label>
+            <span>Is important:</span>
+            <input type="checkbox">
+        </label>
+        <label>
+            <span>Choose gender:</span>
+            <label>Male:
+                <input type="radio" name="gender" value="male">
+            </label>
+            <label>Female:
+                <input type="radio" name="gender" value="female">
+            </label>
+        </label>
+        <label>
+            <span>Bio:</span>
+            <textarea rows="3"></textarea>
+        </label>
+        <label>
+            <span>Items:</span>
+            <select>
+                <option>Red</option>
+                <option selected>Green</option>
+                <option>Blue</option>
+            </select>
+        </label>
+
+        <button type="button">Click me!</button>
+
+        <button type="reset">Clear form!</button>
+        <button type="submit">Submit!</button>
+    </form>
+</body>
+
+</html>
